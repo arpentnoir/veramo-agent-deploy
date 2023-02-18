@@ -289,8 +289,8 @@ credentialIssuerLD:
         # The LdDefaultContext is a "catch-all" for now.
         - $require: '@veramo/credential-ld?t=object#LdDefaultContexts'
         - $require: '@transmute/credentials-context?t=object#contexts'
-        - 'https://schema.org/'
-        - 'https://veramolabs.github.io/ld-context/contexts/kyc/v1/'
+        - custom:schema.org:
+            "@context": custom:schema.org
         #  others should be included here
 
 # Agent
