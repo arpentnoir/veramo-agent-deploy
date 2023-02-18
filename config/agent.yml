@@ -289,8 +289,8 @@ credentialIssuerLD:
         # The LdDefaultContext is a "catch-all" for now.
         - $require: '@veramo/credential-ld?t=object#LdDefaultContexts'
         - $require: '@transmute/credentials-context?t=object#contexts'
-        - custom:schema.org:
-            "@context": custom:schema.org
+        - custom:person:
+            "@context": custom:https://json-ld.org/contexts/person.jsonld
         #  others should be included here
 
 # Agent
