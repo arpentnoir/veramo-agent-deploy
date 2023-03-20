@@ -289,8 +289,8 @@ credentialIssuerLD:
         # The LdDefaultContext is a "catch-all" for now.
         - $require: '@veramo/credential-ld?t=object#LdDefaultContexts'
         - $require: '@transmute/credentials-context?t=object#contexts'
-        - custom:person:
-            "@context": custom:https://json-ld.org/contexts/person.jsonld
+        - custom:traceability:
+            "@context": custom:"https://w3id.org/traceability/v1
         #  others should be included here
 
 # Agent
