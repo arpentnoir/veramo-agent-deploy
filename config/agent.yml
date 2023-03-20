@@ -290,7 +290,7 @@ credentialIssuerLD:
         - $require: '@veramo/credential-ld?t=object#LdDefaultContexts'
         - $require: '@transmute/credentials-context?t=object#contexts'
         - custom:traceability:
-            "@context": custom:"https://w3id.org/traceability/v1
+            "@context": custom:https://w3c-ccg.github.io/traceability-vocab/contexts/traceability-v1.jsonld
         #  others should be included here
 
 # Agent
