@@ -4,6 +4,7 @@ COPY package.json .
 COPY yarn.lock .
 ADD config config
 ADD packages packages
-RUN yarn
-run yarn build
-CMD ["yarn", "start"]
+RUN npm install -g pnpm
+RUN pnpm
+run pnpm build
+CMD ["pnpm", "start"]
