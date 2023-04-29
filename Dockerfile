@@ -7,5 +7,5 @@ ADD config config
 ADD packages packages
 RUN npm install -g pnpm
 RUN pnpm install
-run pnpm build
+RUN pnpm build
 CMD ["pnpm", "start"]
