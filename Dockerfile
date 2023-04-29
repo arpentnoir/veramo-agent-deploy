@@ -6,6 +6,6 @@ COPY pnpm-workspace.yaml .
 ADD config config
 ADD packages packages
 RUN npm install -g pnpm
-RUN pnpm
+RUN pnpm install
 run pnpm build
 CMD ["pnpm", "start"]
