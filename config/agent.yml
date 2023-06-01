@@ -100,17 +100,17 @@ server:
     - - $require: "cors"
 
     # Add agent to the request object
-    - - $require: "@veramo/remote-server?t=function#RequestWithAgentRouter"
+    - - $require: "@vckit/remote-server?t=function#RequestWithAgentRouter"
         $args:
           - agent:
               $ref: /agent
 
     # DID Documents
-    - - $require: "@veramo/remote-server?t=function#WebDidDocRouter"
+    - - $require: "@vckit/remote-server?t=function#WebDidDocRouter"
 
     # API base path
     - - /messaging
-      - $require: "@veramo/remote-server?t=function#MessagingRouter"
+      - $require: "@vckit/remote-server?t=function#MessagingRouter"
         $args:
           - save: true
             metaData:
@@ -119,18 +119,18 @@ server:
 
     # API base path
     - - /agent
-      - $require: "@veramo/remote-server?t=function#apiKeyAuth"
+      - $require: "@vckit/remote-server?t=function#apiKeyAuth"
         $args:
           - apiKey:
               $ref: /constants/apiKey
-      - $require: "@veramo/remote-server?t=function#AgentRouter"
+      - $require: "@vckit/remote-server?t=function#AgentRouter"
         $args:
           - exposedMethods:
               $ref: /constants/methods
 
     # Open API schema
     - - /open-api.json
-      - $require: "@veramo/remote-server?t=function#ApiSchemaRouter"
+      - $require: "@vckit/remote-server?t=function#ApiSchemaRouter"
         $args:
           - basePath:
               $ref: /constants/agentPath
@@ -160,7 +160,7 @@ server:
 
   # Execute during server initialization
   init:
-    - $require: "@veramo/remote-server?t=function#createDefaultDid"
+    - $require: "@vckit/remote-server?t=function#createDefaultDid"
       $args:
         - agent:
             $ref: /agent
@@ -176,7 +176,7 @@ messageHandler:
     - messageHandlers:
         - $require: "@veramo/did-comm#DIDCommMessageHandler"
         - $require: "@veramo/did-jwt#JwtMessageHandler"
-        - $require: "@veramo/credential-w3c#W3cMessageHandler"
+        - $require: "@vckit/credential-w3c#W3cMessageHandler"
         - $require: "@veramo/selective-disclosure#SdrMessageHandler"
 
 # DID resolvers
@@ -295,7 +295,7 @@ credentialIssuerLD:
 
 # Agent
 agent:
-  $require: "@veramo/core#Agent"
+  $require: "@vckit/core#Agent"
   $args:
     - schemaValidation: false
       plugins:
@@ -305,7 +305,7 @@ agent:
         - $ref: /didDiscovery
         - $ref: /messageHandler
         - $require: "@veramo/did-comm#DIDComm"
-        - $require: '@veramo/credential-w3c#CredentialPlugin'
+        - $require: '@vckit/credential-w3c#CredentialPlugin'
         - $ref: /credentialIssuerLD
         - $require: "@veramo/credential-eip712#CredentialIssuerEIP712"
         - $require: "@veramo/selective-disclosure#SelectiveDisclosure"

@@ -6,11 +6,11 @@
   "author": "jason.healy@mesh.xyz",
   "license": "Apache-2.0",
   "scripts": {
-    "start": "NODE_ENV=production yarn veramo server --config=./config/agent.yml",
-    "dev": "yarn veramo server --config=./config/agent-local.yml"
+    "start": "NODE_ENV=production yarn vckit server --config=./config/agent.yml",
+    "dev": "yarn vckit server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@veramo/cli": "^4.1.3-next.9",
-    "agent-explore": "^1.8.3"
+    "@vckit/cli": "^1.0.0-beta.2",
+    "agent-explore": "^1.15.0"
   }
 }
