@@ -10,7 +10,7 @@
     "dev": "yarn vckit server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@vckit/cli": "^1.0.0-beta.2",
+    "@vckit/cli": "^1.0.0-beta.4",
     "agent-explore": "^1.15.0"
   }
 }
